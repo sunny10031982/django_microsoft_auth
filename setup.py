@@ -9,13 +9,10 @@ from setuptools import find_packages, setup
 
 import versioneer
 
-# for pip >= 10
-try:
-    from pip._internal.req import parse_requirements
-# for pip <= 9.0.3
-except ImportError:
-    from pip.req import parse_requirements
-
+def parse_requirements(filename):
+    """ load requirements from a pip requirements file """
+    lineiter = (line.strip() for line in open(filename))
+    return [line for line in lineiter if line and not line.startswith("#")]
 
 BASE_DIR = path.abspath(path.dirname(__file__))
 
