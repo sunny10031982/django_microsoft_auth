@@ -25,7 +25,7 @@ with open(path.join(BASE_DIR, "HISTORY.rst")) as history_file:
 req_files = {
     "dev": "reqs/dev.in",
     "ql": "reqs/ql.in",
-    "requirements": "reqs/requirements.in",
+    "requirements": "reqs/requirements-no-django.in",
     "setup": "reqs/setup.in",
     "test": "reqs/test.in",
 }
