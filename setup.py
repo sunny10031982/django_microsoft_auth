@@ -71,9 +71,4 @@ setup(
     test_suite="tests",
     tests_require=requirements["test"],
     setup_requires=requirements["setup"],
-    extras_require={
-        "dev": requirements["dev"],
-        "ql": requirements["ql"],
-        "test": requirements["test"],
-    },
 )
