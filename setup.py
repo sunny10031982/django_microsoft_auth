@@ -9,7 +9,7 @@ from setuptools import find_packages, setup
 
 import versioneer
 
-def parse_requirements(filename, session):
+def parse_requirements(filename):
     """ load requirements from a pip requirements file """
     lineiter = (line.strip() for line in open(filename))
     return [line for line in lineiter if line and not line.startswith("#")]
@@ -32,7 +32,7 @@ req_files = {
 
 requirements = {}
 for req, req_file in req_files.items():
-    reqs = parse_requirements(req_file, session="fake")
+    reqs = parse_requirements(req_file)
     requirements[req] = reqs
 
 setup(
